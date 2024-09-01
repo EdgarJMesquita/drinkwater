@@ -1,10 +1,16 @@
-import React from 'react';
-import AppLoading from 'expo-app-loading';
-import { StatusBar } from 'expo-status-bar';
-import { Righteous_400Regular } from '@expo-google-fonts/righteous';
-import { useFonts, Ubuntu_400Regular, Ubuntu_500Medium, Ubuntu_700Bold } from '@expo-google-fonts/ubuntu';
+import React, { useEffect } from "react";
+import { StatusBar } from "expo-status-bar";
+import { Righteous_400Regular } from "@expo-google-fonts/righteous";
+import {
+  useFonts,
+  Ubuntu_400Regular,
+  Ubuntu_500Medium,
+  Ubuntu_700Bold,
+} from "@expo-google-fonts/ubuntu";
+import * as SplashScreen from "expo-splash-screen";
+import { Home } from "./src/screens/Home";
 
-import { Home } from './src/screens/Home';
+SplashScreen.preventAutoHideAsync();
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -14,17 +20,17 @@ export default function App() {
     Ubuntu_700Bold,
   });
 
-  if (!fontsLoaded) {
-    return <AppLoading />;
-  }
+  useEffect(() => {
+    if (fontsLoaded) {
+      SplashScreen.hideAsync();
+    }
+  }, [fontsLoaded]);
+
+  if (!fontsLoaded) return null;
 
   return (
     <>
-      <StatusBar
-        style="light"
-        backgroundColor="transparent"
-        translucent
-      />
+      <StatusBar style="light" backgroundColor="transparent" translucent />
 
       <Home />
     </>

@@ -1,30 +1,30 @@
-import { StyleSheet } from 'react-native';
-import { theme } from '../../styles/theme';
+import { StyleSheet } from "react-native";
+import { theme } from "../../styles/theme";
 
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'flex-end',
-    alignItems: 'center',
-    backgroundColor: theme.colors.gray100
+    justifyContent: "flex-end",
+    alignItems: "center",
+    backgroundColor: theme.colors.gray100,
   },
   glass: {
-    width: '100%',
+    width: "100%",
     height: 500,
-    backgroundColor: theme.colors.blue90
+    backgroundColor: theme.colors.blue90,
   },
   button: {
-    position: 'relative',
+    position: "relative",
+    justifyContent: "center",
+    alignItems: "center",
   },
   icon: {
-    position: 'absolute',
-    left: 50,
-    top: 43
+    position: "absolute",
   },
   footer: {
     width: 120,
     height: 120,
-    position: 'absolute',
+    position: "absolute",
     bottom: 35,
   },
 });
