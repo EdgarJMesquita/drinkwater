@@ -30,6 +30,12 @@
     },
     "plugins": [
       "expo-font"
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "578d56b1-4cd3-462a-89fb-dbddd8ea8d4d"
+      }
+    },
+    "owner": "edgarjonas"
   }
 }
